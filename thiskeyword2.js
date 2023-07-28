@@ -8,6 +8,7 @@ const user = {
 
     info() {
             console.log (`${this.name} is a ${this.career.title} at ${this.career.employer}`)
+            
         }
     }
 
