@@ -1,16 +1,17 @@
-const promiseOne = new Promise((resolve, reject) => {
+const promiseOne = () => new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('promiseOne Resolved!');
     }, 500);
   });
   
-  const promiseTwo = new Promise((resolve, reject) => {
+  const promiseTwo = () => new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve('promiseTwo Resolved!');
+    //   resolve('promiseTwo Resolved!');
+      reject('promiseTwo rejected');
     }, 600);
   });
   
-  const promiseThree = new Promise((resolve, reject) => {
+  const promiseThree = () => new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('promiseThree Resolved!');
     }, 700);
@@ -18,10 +19,10 @@ const promiseOne = new Promise((resolve, reject) => {
   
   const fetchData = async () => {
     try {
-    //   const responseOne = await promiseOne;
-    //   const responseTwo = await promiseTwo;
-    //   const responseThree = await promiseThree;
-    const response = await Promise.all([promiseOne,promiseTwo,promiseThree])
+    //   const responseOne = await promiseOne();
+    //   const responseTwo = await promiseTwo();
+    //   const responseThree = await promiseThree();
+    const response = await Promise.all([promiseOne(),promiseTwo(),promiseThree()])
       console.log('response of the promises', response);
     } catch (error) {
       console.log('error: ', error);
