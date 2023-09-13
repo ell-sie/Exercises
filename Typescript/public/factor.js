@@ -9,11 +9,13 @@ function minDistance(n) {
         }
     }
     let diff = [];
-    let minDiff = Infinity;
     for (let j = 1; j < factor.length; j++) {
-        diff.push((factor[j + 1] - factor[j]));
+        (diff.push((factor[j] - factor[j - 1])));
     }
-    return minDiff = Math.min(...diff);
-    console.log(minDistance(13013));
+    return Math.min(...diff);
 }
 exports.minDistance = minDistance;
+console.log(minDistance(8));
+console.log(minDistance(25));
+console.log(minDistance(13013));
+console.log(minDistance(218683));
