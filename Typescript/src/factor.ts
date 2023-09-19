@@ -15,5 +15,5 @@ export function minDistance(n: number): number {
     
     }
       return minDiff = Math.min(...diff)
-
+  }
     console.log(minDistance(13013))
